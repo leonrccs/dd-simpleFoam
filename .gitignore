@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+myTurbulenceModel/Make/linux64GccDPInt32Opt/
+
+simpleNNFoam/Make/linux64GccDPInt32Opt/
