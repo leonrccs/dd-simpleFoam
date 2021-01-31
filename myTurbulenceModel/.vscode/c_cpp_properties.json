@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${FOAM_SRC}/**",
+                "${FOAM_SRC}/TurbulenceModels/turbulenceModels/lnInclude/**",
+                "${FOAM_SRC}/TurbulenceModels/incompressible/lnInclude/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

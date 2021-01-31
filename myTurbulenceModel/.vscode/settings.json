@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "myTurbulenceModel.C": "cpp",
+        "makeTurModel.C": "cpp",
+        "eddyViscosity.C": "cpp",
+        "fvmSup.C": "cpp",
+        "LRR.C": "cpp",
+        "fvOption.C": "cpp",
+        "RASModel.C": "cpp",
+        "turbulenceModel.C": "cpp"
+    },
+}
