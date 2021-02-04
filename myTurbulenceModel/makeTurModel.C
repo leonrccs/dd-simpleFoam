@@ -43,8 +43,10 @@ makeBaseTurbulenceModel
 // Custom models
 // -------------------------------------------------------------------------- //
 
+#include "kOmegaMl1.H"
 #include "myTurbulenceModel.H"
 #include "myIterativeTurbulenceModel.H"
+makeRASModel(kOmegaMl1);
 makeRASModel(myIterativeTurbulenceModel);
 makeRASModel(myTurbulenceModel);
 
