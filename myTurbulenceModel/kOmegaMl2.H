@@ -25,7 +25,7 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::RASModels::kOmegaMl1
+    Foam::RASModels::kOmegaMl2
 
 Group
     grpRASTurbulence
@@ -54,12 +54,12 @@ Description
     \endverbatim
 
 SourceFiles
-    kOmegaMl1.C
+    kOmegaMl2.C
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef kOmegaMl1_H
-#define kOmegaMl1_H
+#ifndef kOmegaMl2_H
+#define kOmegaMl2_H
 
 #include "RASModel.H"
 #include "eddyViscosity.H"
@@ -72,11 +72,11 @@ namespace RASModels
 {
 
 /*---------------------------------------------------------------------------*\
-                           Class kOmegaMl1 Declaration
+                           Class kOmegaMl2 Declaration
 \*---------------------------------------------------------------------------*/
 
 template<class BasicTurbulenceModel>
-class kOmegaMl1
+class kOmegaMl2
 :
     public eddyViscosity<RASModel<BasicTurbulenceModel>>
 {
@@ -95,6 +95,10 @@ protected:
             dimensionedScalar gamma_start_;
             dimensionedScalar gamma_max_;
             dimensionedScalar end_ramp_;
+
+        // Switches
+            Switch model_k_;
+            Switch model_omega_;
 
 
         // Fields
@@ -117,13 +121,13 @@ public:
 
 
     //- Runtime type information
-    TypeName("kOmegaMl1");
+    TypeName("kOmegaMl2");
 
 
     // Constructors
 
         //- Construct from components
-        kOmegaMl1
+        kOmegaMl2
         (
             const alphaField& alpha,
             const rhoField& rho,
@@ -137,7 +141,7 @@ public:
 
 
     //- Destructor
-    virtual ~kOmegaMl1() = default;
+    virtual ~kOmegaMl2() = default;
 
 
     // Member Functions
@@ -217,7 +221,7 @@ public:
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 #ifdef NoRepository
-    #include "kOmegaMl1.C"
+    #include "kOmegaMl2.C"
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
