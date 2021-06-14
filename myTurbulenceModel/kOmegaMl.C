@@ -26,7 +26,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "kOmegaMl2.H"
+#include "kOmegaMl.H"
 #include "fvOptions.H"
 #include "bound.H"
 
@@ -40,7 +40,7 @@ namespace RASModels
 // * * * * * * * * * * * * Protected Member Functions  * * * * * * * * * * * //
 
 template<class BasicTurbulenceModel>
-void kOmegaMl2<BasicTurbulenceModel>::correctNut()
+void kOmegaMl<BasicTurbulenceModel>::correctNut()
 {
     this->nut_ = k_/omega_;
     this->nut_.correctBoundaryConditions();
@@ -53,7 +53,7 @@ void kOmegaMl2<BasicTurbulenceModel>::correctNut()
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
 template<class BasicTurbulenceModel>
-kOmegaMl2<BasicTurbulenceModel>::kOmegaMl2
+kOmegaMl<BasicTurbulenceModel>::kOmegaMl
 (
     const alphaField& alpha,
     const rhoField& rho,
@@ -218,7 +218,7 @@ kOmegaMl2<BasicTurbulenceModel>::kOmegaMl2
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
 template<class BasicTurbulenceModel>
-bool kOmegaMl2<BasicTurbulenceModel>::read()
+bool kOmegaMl<BasicTurbulenceModel>::read()
 {
     if (eddyViscosity<RASModel<BasicTurbulenceModel>>::read())
     {
@@ -236,7 +236,7 @@ bool kOmegaMl2<BasicTurbulenceModel>::read()
 
 
 template<class BasicTurbulenceModel>
-void kOmegaMl2<BasicTurbulenceModel>::correct()
+void kOmegaMl<BasicTurbulenceModel>::correct()
 {
     if (!this->turbulence_)
     {
@@ -341,7 +341,7 @@ void kOmegaMl2<BasicTurbulenceModel>::correct()
 }
 
 template<class BasicTurbulenceModel>
-tmp<fvVectorMatrix>kOmegaMl2<BasicTurbulenceModel>::divDevRhoReff
+tmp<fvVectorMatrix>kOmegaMl<BasicTurbulenceModel>::divDevRhoReff
 (
     volVectorField& U
 ) const
