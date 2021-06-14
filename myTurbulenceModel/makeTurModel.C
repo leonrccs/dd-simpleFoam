@@ -45,10 +45,12 @@ makeBaseTurbulenceModel
 
 #include "kOmegaMl1.H"
 #include "kOmegaMl2.H"
+#include "kOmegaMl3.H"
 #include "myTurbulenceModel.H"
 #include "myIterativeTurbulenceModel.H"
 makeRASModel(kOmegaMl1);
 makeRASModel(kOmegaMl2);
+makeRASModel(kOmegaMl3);
 makeRASModel(myIterativeTurbulenceModel);
 makeRASModel(myTurbulenceModel);
 
